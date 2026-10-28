@@ -14,25 +14,32 @@ routes = {"R1": {"name": "Main Gate - Library", "trips": []},
 MIN_CAPACITY = 10
 DRIVERS = ("Prakash", "Leela", "Imran", "Tom")
 
+
 def add_trip_log(route_id, passenger_count, logs=None):
     """Record a trip's passenger count and append a line to the log list.
 
     Raises ValueError if the count is not a non-negative whole number and
     KeyError if the route does not exist.
     """
-    if isinstance(passenger_count, bool) or not isinstance(passenger_count, int):
-        raise ValueError(f"passenger count must be a whole number, got {passenger_count!r}")
+    if (isinstance(passenger_count, bool)
+            or not isinstance(passenger_count, int)):
+        raise ValueError(
+            f"passenger count must be a whole number, "
+            f"got {passenger_count!r}")
     if passenger_count < 0:
-        raise ValueError(f"passenger count cannot be negative, got {passenger_count!r}")
+        raise ValueError(
+            f"passenger count cannot be negative, got {passenger_count!r}")
     if logs is None:
         logs = []
     routes[route_id]["trips"].append(passenger_count)
     logs.append(f"{datetime.now()}: {route_id} carried {passenger_count}")
     return logs
 
+
 def remove_route(route_id):
     """Delete a route and its trip history."""
     del routes[route_id]
+
 
 def average_load(route_id):
     """Return the mean passengers per trip, or None if no trips are logged."""
@@ -40,6 +47,7 @@ def average_load(route_id):
     if not trips:
         return None
     return sum(trips) / len(trips)
+
 
 def underused_routes():
     """Return ids of routes whose average load is below MIN_CAPACITY."""
@@ -50,11 +58,13 @@ def underused_routes():
             flagged.append(route_id)
     return flagged
 
+
 def assign_driver(route_id):
     """Pick a driver for an existing route."""
     if route_id not in routes:
         raise KeyError(route_id)
     return secrets.choice(DRIVERS)
+
 
 def sync_fleet_data(file="fleet.json"):
     """Write the route data to a JSON file and reload it from disk."""
@@ -65,9 +75,11 @@ def sync_fleet_data(file="fleet.json"):
     routes.clear()
     routes.update(saved)
 
+
 def main():
     """Run the demo: log sample trips, report stats, look up a route."""
-    sample_trips = [("R1", 32), ("R1", 28), ("R2", 4), ("R2", -6), ("R3", "full")]
+    sample_trips = [
+        ("R1", 32), ("R1", 28), ("R2", 4), ("R2", -6), ("R3", "full")]
     logs = []
     for route_id, count in sample_trips:
         try:
@@ -89,4 +101,6 @@ def main():
     else:
         print("R3 average: route R3 has been removed")
 
-main()
+
+if __name__ == "__main__":
+    main()
