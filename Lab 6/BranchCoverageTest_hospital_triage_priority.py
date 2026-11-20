@@ -70,3 +70,12 @@ def test_branch_two_consecutive_low_readings_fail():
 
 def test_branch_pressure_streak_resets_at_normal_value():
     assert monitor_oxygen_manifolds([[3.0, 4.1, 3.0], [4.0]]) == "PRESSURE_NORMAL"
+
+
+def test_branch_vitals_at_threshold_follow_noncritical_path():
+    wards = [{"is_accepting": True, "patients": [{"spo2": 90, "hr": 120}]}]
+    assert process_triage_wards(wards, 10)["acuity_score"] == 10
+
+
+def test_branch_pressure_at_four_bar_follows_recovery_path():
+    assert monitor_oxygen_manifolds([[3.9, 4.0, 3.9]]) == "PRESSURE_NORMAL"
