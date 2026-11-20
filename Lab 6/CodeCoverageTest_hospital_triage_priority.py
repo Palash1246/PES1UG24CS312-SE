@@ -70,3 +70,13 @@ def test_two_consecutive_low_readings_fail():
 
 def test_pressure_streak_resets_at_normal_value():
     assert monitor_oxygen_manifolds([[3.0, 4.1, 3.0], [4.0]]) == "PRESSURE_NORMAL"
+
+
+def test_vitals_at_critical_threshold_use_default_acuity():
+    wards = [{"is_accepting": True, "patients": [{"spo2": 90, "hr": 120}]}]
+    result = process_triage_wards(wards, 10)
+    assert result == {"acuity_score": 10, "status": "TRIAGE_STABLE"}
+
+
+def test_pressure_exactly_four_bar_is_normal():
+    assert monitor_oxygen_manifolds([[4.0, 4.0]]) == "PRESSURE_NORMAL"
