@@ -1,0 +1,10 @@
+$ python processor.py (starter; sample inputs)
+==== Running parse_vitals_summary ====
+Enter vitals (HR,SpO2,Temp): Summary: Vitals: HR=80.0, SpO2=98.0% - STABLE
+
+==== Running compute_patient_bmi ====
+Enter weight/height (e.g. 70/1.75): BMI: 22.86
+
+==== Running assign_ward_bed ====
+Enter allocation (e.g. ICU-05): Assignment: Intensive Care Unit Bed #5
+[exit code: 0]

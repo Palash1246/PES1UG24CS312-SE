@@ -1,4 +1,4 @@
-$ processor.py
+$ python processor.py (fixed; sample inputs)
 ==== Running parse_vitals_summary ====
 Enter vitals (HR,SpO2,Temp): Summary: Vitals: HR=80.0, SpO2=98.0% - STABLE
 

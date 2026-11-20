@@ -1,0 +1,462 @@
+$ python -m pytest -q --tb=short test_processor.py (starter processor; Hypothesis enabled)
+C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pytest_asyncio\plugin.py:208: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+...F.FFF                                                                 [100%]
+================================== FAILURES ===================================
+_______________________ test_bmi_extreme_height_is_safe _______________________
+test_processor.py:36: in test_bmi_extreme_height_is_safe
+    assert compute_patient_bmi("1/1e-300") is None
+processor.py:13: in compute_patient_bmi
+    bmi = weight / (height ** 2)
+E   ZeroDivisionError: float division by zero
+_____________________ test_parse_vitals_summary_no_crash ______________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 341, in from_call
+  |     result: TResult | None = func()
+  |                              ^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+  |     lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_hooks.py", line 513, in __call__
+  |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_manager.py", line 120, in _hookexec
+  |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 182, in _multicall
+  |     return outcome.get_result()
+  |            ^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_result.py", line 100, in get_result
+  |     raise exc.with_traceback(exc.__traceback__)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\threadexception.py", line 92, in pytest_runtest_call
+  |     yield from thread_exception_runtest_hook()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\threadexception.py", line 68, in thread_exception_runtest_hook
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\unraisableexception.py", line 95, in pytest_runtest_call
+  |     yield from unraisable_exception_runtest_hook()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\unraisableexception.py", line 70, in unraisable_exception_runtest_hook
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\logging.py", line 846, in pytest_runtest_call
+  |     yield from self._runtest_for(item, "call")
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\logging.py", line 829, in _runtest_for
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\capture.py", line 880, in pytest_runtest_call
+  |     return (yield)
+  |             ^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\skipping.py", line 257, in pytest_runtest_call
+  |     return (yield)
+  |             ^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 103, in _multicall
+  |     res = hook_impl.function(*args)
+  |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+  |     item.runtest()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\python.py", line 1627, in runtest
+  |     self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_hooks.py", line 513, in __call__
+  |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_manager.py", line 120, in _hookexec
+  |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 182, in _multicall
+  |     return outcome.get_result()
+  |            ^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_result.py", line 100, in get_result
+  |     raise exc.with_traceback(exc.__traceback__)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 103, in _multicall
+  |     res = hook_impl.function(*args)
+  |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+  |     result = testfunction(**testargs)
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 45, in test_parse_vitals_summary_no_crash
+  |     def test_parse_vitals_summary_no_crash(s):
+  |                ^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\hypothesis\core.py", line 2334, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | BaseExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 4, in parse_vitals_summary
+    |     spo2 = float(parts[1])
+    |                  ~~~~~^^^
+    | IndexError: list index out of range
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 46, in test_parse_vitals_summary_no_crash
+    |     _no_crash(parse_vitals_summary, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: parse_vitals_summary crashed for '0': list index out of range
+    | Failing test case: test_parse_vitals_summary_no_crash(
+    |     s='0',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 3, in parse_vitals_summary
+    |     hr = float(parts[0])
+    |          ^^^^^^^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 46, in test_parse_vitals_summary_no_crash
+    |     _no_crash(parse_vitals_summary, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: parse_vitals_summary crashed for '': could not convert string to float: ''
+    | Failing test case: test_parse_vitals_summary_no_crash(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 2, in parse_vitals_summary
+    |     parts = vitals_csv.split(',')
+    |             ^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 46, in test_parse_vitals_summary_no_crash
+    |     _no_crash(parse_vitals_summary, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: parse_vitals_summary crashed for None: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_vitals_summary_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+________________________ test_compute_patient_bmi_safe ________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 341, in from_call
+  |     result: TResult | None = func()
+  |                              ^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+  |     lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_hooks.py", line 513, in __call__
+  |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_manager.py", line 120, in _hookexec
+  |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 182, in _multicall
+  |     return outcome.get_result()
+  |            ^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_result.py", line 100, in get_result
+  |     raise exc.with_traceback(exc.__traceback__)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\threadexception.py", line 92, in pytest_runtest_call
+  |     yield from thread_exception_runtest_hook()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\threadexception.py", line 68, in thread_exception_runtest_hook
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\unraisableexception.py", line 95, in pytest_runtest_call
+  |     yield from unraisable_exception_runtest_hook()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\unraisableexception.py", line 70, in unraisable_exception_runtest_hook
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\logging.py", line 846, in pytest_runtest_call
+  |     yield from self._runtest_for(item, "call")
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\logging.py", line 829, in _runtest_for
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\capture.py", line 880, in pytest_runtest_call
+  |     return (yield)
+  |             ^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\skipping.py", line 257, in pytest_runtest_call
+  |     return (yield)
+  |             ^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 103, in _multicall
+  |     res = hook_impl.function(*args)
+  |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+  |     item.runtest()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\python.py", line 1627, in runtest
+  |     self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_hooks.py", line 513, in __call__
+  |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_manager.py", line 120, in _hookexec
+  |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 182, in _multicall
+  |     return outcome.get_result()
+  |            ^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_result.py", line 100, in get_result
+  |     raise exc.with_traceback(exc.__traceback__)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 103, in _multicall
+  |     res = hook_impl.function(*args)
+  |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+  |     result = testfunction(**testargs)
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 49, in test_compute_patient_bmi_safe
+  |     def test_compute_patient_bmi_safe(s):
+  |                ^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\hypothesis\core.py", line 2334, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | BaseExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 11, in compute_patient_bmi
+    |     weight = float(w_str)
+    |              ^^^^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 50, in test_compute_patient_bmi_safe
+    |     _no_crash(compute_patient_bmi, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: compute_patient_bmi crashed for '/': could not convert string to float: ''
+    | Failing test case: test_compute_patient_bmi_safe(
+    |     s='/',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 10, in compute_patient_bmi
+    |     w_str, h_str = bmi_string.split('/')
+    |     ^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 50, in test_compute_patient_bmi_safe
+    |     _no_crash(compute_patient_bmi, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: compute_patient_bmi crashed for '': not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_compute_patient_bmi_safe(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 10, in compute_patient_bmi
+    |     w_str, h_str = bmi_string.split('/')
+    |                    ^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 50, in test_compute_patient_bmi_safe
+    |     _no_crash(compute_patient_bmi, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: compute_patient_bmi crashed for None: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_compute_patient_bmi_safe(
+    |     s=None,
+    | )
+    +------------------------------------
+__________________________ test_assign_ward_bed_safe __________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 341, in from_call
+  |     result: TResult | None = func()
+  |                              ^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+  |     lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_hooks.py", line 513, in __call__
+  |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_manager.py", line 120, in _hookexec
+  |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 182, in _multicall
+  |     return outcome.get_result()
+  |            ^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_result.py", line 100, in get_result
+  |     raise exc.with_traceback(exc.__traceback__)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\threadexception.py", line 92, in pytest_runtest_call
+  |     yield from thread_exception_runtest_hook()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\threadexception.py", line 68, in thread_exception_runtest_hook
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\unraisableexception.py", line 95, in pytest_runtest_call
+  |     yield from unraisable_exception_runtest_hook()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\unraisableexception.py", line 70, in unraisable_exception_runtest_hook
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\logging.py", line 846, in pytest_runtest_call
+  |     yield from self._runtest_for(item, "call")
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\logging.py", line 829, in _runtest_for
+  |     yield
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\capture.py", line 880, in pytest_runtest_call
+  |     return (yield)
+  |             ^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 167, in _multicall
+  |     teardown.throw(outcome._exception)
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\skipping.py", line 257, in pytest_runtest_call
+  |     return (yield)
+  |             ^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 103, in _multicall
+  |     res = hook_impl.function(*args)
+  |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+  |     item.runtest()
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\python.py", line 1627, in runtest
+  |     self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_hooks.py", line 513, in __call__
+  |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_manager.py", line 120, in _hookexec
+  |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 182, in _multicall
+  |     return outcome.get_result()
+  |            ^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_result.py", line 100, in get_result
+  |     raise exc.with_traceback(exc.__traceback__)
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\pluggy\_callers.py", line 103, in _multicall
+  |     res = hook_impl.function(*args)
+  |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+  |     result = testfunction(**testargs)
+  |              ^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 53, in test_assign_ward_bed_safe
+  |     def test_assign_ward_bed_safe(s):
+  |                ^^^
+  |   File "C:\Users\agarw\AppData\Roaming\Python\Python312\site-packages\hypothesis\core.py", line 2334, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | BaseExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 19, in assign_ward_bed
+    |     bed_num = int(bed_str)
+    |               ^^^^^^^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 54, in test_assign_ward_bed_safe
+    |     _no_crash(assign_ward_bed, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: assign_ward_bed crashed for '-': invalid literal for int() with base 10: ''
+    | Failing test case: test_assign_ward_bed_safe(
+    |     s='-',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 17, in assign_ward_bed
+    |     ward, bed_str = allocation_code.strip().split('-')
+    |     ^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 54, in test_assign_ward_bed_safe
+    |     _no_crash(assign_ward_bed, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: assign_ward_bed crashed for '': not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_assign_ward_bed_safe(
+    |     s='',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 17, in _no_crash
+    |     result = function(value)
+    |              ^^^^^^^^^^^^^^^
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\processor.py", line 17, in assign_ward_bed
+    |     ward, bed_str = allocation_code.strip().split('-')
+    |                     ^^^^^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'strip'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 54, in test_assign_ward_bed_safe
+    |     _no_crash(assign_ward_bed, s)
+    |   File "C:\PES\5thSem\Software Engineering\PES1UG24CS312-SE\Lab 7\test_processor.py", line 19, in _no_crash
+    |     pytest.fail(f"{function.__name__} crashed for {value!r}: {exc}")
+    |   File "C:\Program Files\Python312\Lib\site-packages\_pytest\outcomes.py", line 178, in fail
+    |     raise Failed(msg=reason, pytrace=pytrace)
+    | Failed: assign_ward_bed crashed for None: 'NoneType' object has no attribute 'strip'
+    | Failing test case: test_assign_ward_bed_safe(
+    |     s=None,
+    | )
+    +------------------------------------
+=========================== short test summary info ===========================
+FAILED test_processor.py::test_bmi_extreme_height_is_safe - ZeroDivisionError...
+FAILED test_processor.py::test_parse_vitals_summary_no_crash - BaseExceptionG...
+FAILED test_processor.py::test_compute_patient_bmi_safe - BaseExceptionGroup:...
+FAILED test_processor.py::test_assign_ward_bed_safe - BaseExceptionGroup: Hyp...
+4 failed, 4 passed in 1.79s
+
+[exit code: 1]
